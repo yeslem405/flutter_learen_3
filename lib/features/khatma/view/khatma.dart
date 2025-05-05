@@ -11,8 +11,8 @@ class Khatma extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              context.read<AuthBloc>().add(LogoutRequested());
-              Navigator.pushReplacementNamed(context, '/login');
+              // context.read<AuthBloc>().add(LogoutRequested());
+              // Navigator.pushReplacementNamed(context, '/login');
             },
             icon: const Icon(Icons.logout),
           ),

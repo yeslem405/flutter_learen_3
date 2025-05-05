@@ -18,6 +18,7 @@ import 'package:learen_3/features/more/bloc_connec/bloc/connectivity_state.dart'
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:learen_3/features/home/view/homescreen.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +27,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   runApp(const MyApp());
   FlutterNativeSplash.remove();
 }
@@ -52,12 +54,12 @@ class MyApp extends StatelessWidget {
             return BlocBuilder<LocaleBloc, LocaleState>(
               builder: (context, localeState) {
                 return MaterialApp(
-                  routes: {
-                    '/login': (context) => const LoginScreen(),
-                    '/register': (context) => const RegisterScreen(),
-                    '/home': (context) =>
-                        HomeScreen(), // وجهة المستخدم بعد تسجيل الدخول
-                  },
+                  // routes: {
+                  //   '/login': (context) => const LoginScreen(),
+                  //   '/register': (context) => const RegisterScreen(),
+                  //   '/home': (context) =>
+                  //       HomeScreen(), // وجهة المستخدم بعد تسجيل الدخول
+                  // },
                   debugShowCheckedModeBanner: false,
                   theme: themeState.themeData,
                   locale: localeState

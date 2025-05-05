@@ -3,26 +3,29 @@
 // import 'package:dalel/features/auth/presentation/widgets/forgot_password_image.dart';
 // import 'package:dalel/features/auth/presentation/widgets/forgot_password_sub_title.dart';
 // import 'package:dalel/features/auth/presentation/widgets/welcome_text_widget.dart';
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:learen_3/features/auth/presentation/widgets/custom_forgot_password_form.dart';
+import 'package:learen_3/features/auth/presentation/widgets/forgot_password_sub_title.dart';
+import 'package:learen_3/features/auth/presentation/widgets/welcome_text_widget.dart';
 
-// class ForgotPasswordView extends StatelessWidget {
-//   const ForgotPasswordView({super.key});
+class ForgotPasswordView extends StatelessWidget {
+  const ForgotPasswordView({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Scaffold(
-//       body: CustomScrollView(
-//         slivers: [
-//           SliverToBoxAdapter(child: SizedBox(height: 108)),
-//           SliverToBoxAdapter(
-//               child: WelcomeTextWidget(text: AppStrings.forgotPassword)),
-//           SliverToBoxAdapter(child: SizedBox(height: 40)),
-//           SliverToBoxAdapter(child: ForgotPasswrodImage()),
-//           SliverToBoxAdapter(child: SizedBox(height: 24)),
-//           SliverToBoxAdapter(child: ForgotPasswordSubTitle()),
-//           SliverToBoxAdapter(child: CustomForgotPasswrodForm()),
-//         ],
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: SizedBox(height: 108)),
+          SliverToBoxAdapter(
+              child: WelcomeTextWidget(text: "forgotPassword")),
+          SliverToBoxAdapter(child: SizedBox(height: 40)),
+          // SliverToBoxAdapter(child: ForgotPasswrodImage()),
+          SliverToBoxAdapter(child: SizedBox(height: 24)),
+          SliverToBoxAdapter(child: ForgotPasswordSubTitle()),
+          SliverToBoxAdapter(child: CustomForgotPasswrodForm()),
+        ],
+      ),
+    );
+  }
+}
